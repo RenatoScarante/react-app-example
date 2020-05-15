@@ -1,6 +1,10 @@
 import { createStore } from "redux";
-import rootReducer from "../reducers/index";
+import storeSynchronize from "redux-localstore";
 
-const store = createStore(rootReducer);
+import reducers from "../ducks";
+
+const store = createStore(reducers);
 
 export default store;
+
+storeSynchronize(store);

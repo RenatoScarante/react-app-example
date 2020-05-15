@@ -5,7 +5,8 @@ import { Link, NavLink as RRNavLink } from "react-router-dom";
 
 import classnames from "classnames";
 
-import { logout } from "../redux/actions/authActions";
+//import { reauthenticate } from "../services/auth";
+import { Creators as authActions } from "../redux/ducks/auth";
 
 import {
   Container,
@@ -31,11 +32,27 @@ const NavbarMain = () => {
   };
 
   function handleLogout() {
-    dispatch(logout());
+    dispatch(authActions.logout());
     toggleNavbarCollapse();
 
     history.push("/");
   }
+
+  // async function checkUser() {
+  //   if (user === undefined || user.id === undefined) {
+  //     const response = await reauthenticate();
+
+  //     if (response.user !== undefined) {
+  //       const user = response.user;
+
+  //       dispatch(authActions.login({ user: user, token: response.token }));
+
+  //       history.push("/");
+  //     }
+  //   }
+  // }
+
+  //checkUser();
 
   useEffect(() => {
     const updateNavbarColor = () => {
@@ -57,7 +74,7 @@ const NavbarMain = () => {
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  });
+  }, []);
 
   return (
     <div>
@@ -69,7 +86,7 @@ const NavbarMain = () => {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand data-placement="bottom" to="/" title="" tag={Link}>
-              React App Base Example
+              {process.env.REACT_APP_NAME}
             </NavbarBrand>
             <button
               aria-expanded={navbarCollapse}

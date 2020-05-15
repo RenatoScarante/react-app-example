@@ -9,6 +9,34 @@ export function isAuthenticated() {
   return localStorage.getItem(TOKEN) !== null;
 }
 
+export async function reauthenticate() {
+  let response = {};
+
+  const serializedUser = localStorage.getItem(USER);
+  const user = JSON.parse(serializedUser);
+
+  if (user === undefined || user === null) {
+    return { user: undefined };
+  }
+
+  try {
+    const data = { email: user.email };
+
+    await api
+      .post(process.env.REACT_APP_USER_REAUTHENTICATE_URL, data)
+      .then(res => {
+        response = res.data;
+      })
+      .catch(error => {
+        toastr.error(`Erro`, `Erro ao realizar o login ${error}`);
+      });
+  } catch (error) {
+    toastr.error(`Erro`, `Erro ao realizar o login ${error.message}`);
+  }
+
+  return response;
+}
+
 export async function doLogin(data) {
   let response = {};
 

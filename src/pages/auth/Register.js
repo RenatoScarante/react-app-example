@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { toastr } from "react-redux-toastr";
 
 import { doRegister } from "../../services/auth";
-import { login } from "../../redux/actions/authActions";
+import { Creators as authActions } from "../../redux/ducks/auth";
 
 import { Container, Card, Form, Row, Col, Button, Input } from "reactstrap";
 import InputMask from "react-input-mask";
@@ -57,7 +57,7 @@ const Register = () => {
     if (response.user !== undefined) {
       const user = response.user;
 
-      dispatch(login({ user: user, token: response.token }));
+      dispatch(authActions.login(user, response.token));
 
       toastr.success(
         "Registro realizado com sucesso",

@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { toastr } from "react-redux-toastr";
 
 import { doLogin } from "../../services/auth";
-import { login } from "../../redux/actions/authActions";
+import { Creators as authActions } from "../../redux/ducks/auth";
 
 import { Container, Row, Col, Card, Button, Form, Input } from "reactstrap";
 
@@ -23,7 +23,7 @@ const Login = () => {
 
       toastr.success("Login realizado com sucesso", `Bem vindo ${user.name}`);
 
-      dispatch(login({ user: user, token: response.token }));
+      dispatch(authActions.login(user, response.token));
 
       history.push("/home");
     }
