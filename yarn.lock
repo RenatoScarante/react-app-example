@@ -8605,6 +8605,11 @@ raf@^3.4.1:
   dependencies:
     performance-now "^2.1.0"
 
+ramda@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.27.1.tgz#66fc2df3ef873874ffc2da6aa8984658abacf5c9"
+  integrity sha512-PgIdVpn5y5Yns8vqb8FzBUEYn98V3xcPgawAkkgj0YJ0qDsnHCiNmZYfOGMgOvoB0eWFLpYbhxUR3mxfDIMvpw==
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -8956,6 +8961,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-localstore@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/redux-localstore/-/redux-localstore-0.4.0.tgz#54b3f346ba3278a24e9f4b21d441d603f9f22681"
+  integrity sha512-QRrqUhOPaqrsS4FVWIpsKnBnaHH/QKsh9qbsXl+wp+sht/TwamLMQQZN6gQcoh4uWxpBk+eWXMAkNSk9P+xglA==
+
 redux@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
@@ -8963,6 +8973,13 @@ redux@^4.0.5:
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
+
+reduxsauce@^1.1.2:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/reduxsauce/-/reduxsauce-1.2.1.tgz#438f0542146fb64f57b3ee6b39671a56962df568"
+  integrity sha512-X/ic+b7UhlpV8HXsGHm4bB0nScx0A3xl/OIBkJDfZ1LjtBQIYPC7fdUCyCh/8Hl2ArarQ02da8IEKpCPgQE9vA==
+  dependencies:
+    ramda "^0.27.1"
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
@@ -10227,9 +10244,9 @@ tmp@^0.0.33:
     os-tmpdir "~1.0.2"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
